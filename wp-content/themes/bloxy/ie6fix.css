@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+/*
+######################################## 
+#                                      #
+#  Bloxy Theme for WordPress (2.6)     #
+#  provided by http://www.arcance.net  #
+#  ----------------------------------  #
+#  Adjustments for IE6                 #
+#                                      #
+########################################
+*/
+
+#nav li:hover, #nav .current_page_item, #nav .current_page_item:hover, #nav a:hover, #nav .current_page_item a, #nav .current_page_item a:hover { 
+	background: none!important; 
+}
+#s { 
+	padding: 2px 5px 0 5px; 
+	margin-right: -3px;
+}
+.blackTitle { 
+	margin: 0 0 -4px 0; 
+	padding-right: 0;
+}
+.postBottom { 
+	background-color: #161617; 
+	height: 12px; 
+}
+.sidebarBox {  
+	margin: 0 0 -4px 0; 
+	padding-right: 0; 
+}
+.sidebarBoxBottom { 
+	background-color: #161617; 
+	height: 16px; 
+}
+.footerBox { 
+	margin: 0 0 -4px 0; 
+	padding-right: 0;
+}
+.footerBoxBottom { 
+	background-color: #000; 
+	height: 12px; 
+}

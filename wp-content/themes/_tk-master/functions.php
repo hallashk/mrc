@@ -117,6 +117,10 @@ function _tk_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', '_tk_scripts' );
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9b8e15da06769f4a1173d25252d7d1f658bc5f62
 /**
  * Implement the Custom Header feature.
  */

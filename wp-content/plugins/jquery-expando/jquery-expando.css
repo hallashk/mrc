@@ -1,5 +1,17 @@
+<<<<<<< HEAD
 
 div.expando_text {
+=======
+div.expando_text {
+	height:0;
+	overflow:hidden;
+	visibility:collapse;
+}
+
+div.expando_text.show {
+	height:auto;
+	visibility:visible;
+>>>>>>> 9b8e15da06769f4a1173d25252d7d1f658bc5f62
 	background: #b3d1ff;
 	border: 1px solid #555;
 	border-radius: 10px;
@@ -15,6 +27,7 @@ a.expando_link {
 }
 
 a.expando_link>span.view_modifier {
+<<<<<<< HEAD
 	background: url(plus.gif) no-repeat 5px 4px;
 	padding-left: 20px;
 	width: 20px;
@@ -23,4 +36,12 @@ a.expando_link>span.view_modifier {
 
 a.expando_link>span.view_modifier[data-visible=true] {
 	background: url(minus.gif) no-repeat 5px 4px;
+=======
+	background:url(plus.gif) left center no-repeat;
+	padding-left:10px;
+}
+
+a.expando_link>span.view_modifier.show {
+	background:url(minus.gif) left center no-repeat;
+>>>>>>> 9b8e15da06769f4a1173d25252d7d1f658bc5f62
 }

@@ -26,11 +26,35 @@ global $JQEX;
 
 if( !class_exists( "JQEX" ) ):
 
+<<<<<<< HEAD
+=======
+	function pre_process_expandos($content) {
+		global $shortcode_tags;
+	 
+		// Backup current registered shortcodes and clear them all out
+		$orig_shortcode_tags = $shortcode_tags;
+		$shortcode_tags = array();
+		//front end functions
+		add_shortcode( "expando_toggle_all", array( "JQEX", "expando_all_shortcode" ) );
+		add_shortcode( "expando", array( "JQEX", "expando_shortcode" ) );
+	 
+		// Do the shortcode (only the ones above are registered)
+		$content = do_shortcode($content);
+	 
+		// Put the original shortcodes back
+		$shortcode_tags = $orig_shortcode_tags;
+	 
+		return $content;
+	}
+>>>>>>> 9b8e15da06769f4a1173d25252d7d1f658bc5f62
 
 	class JQEX{
 	
 		static $option_name = "jquery_expando";
+<<<<<<< HEAD
 		public static $count = 0;
+=======
+>>>>>>> 9b8e15da06769f4a1173d25252d7d1f658bc5f62
 		
 		/**
 		 * Class constructor
@@ -46,8 +70,12 @@ if( !class_exists( "JQEX" ) ):
 				//wp-admin functions
 				add_action( "admin_menu", array( __CLASS__, "register_menu_page" ) );
 			} else {
+<<<<<<< HEAD
 				add_shortcode( "expando_toggle_all", array( "JQEX", "expando_all_shortcode" ) );
 				add_shortcode( "expando", array( "JQEX", "expando_shortcode" ) );
+=======
+				add_filter('the_content', "pre_process_expandos", 7);
+>>>>>>> 9b8e15da06769f4a1173d25252d7d1f658bc5f62
 				add_action( "wp_head", array( __CLASS__, "enqueue_styles" ) );
 				add_action( "wp_enqueue_scripts", array( __CLASS__, "enqueue_scripts") );
 			}
@@ -104,6 +132,7 @@ if( !class_exists( "JQEX" ) ):
 			global $JQEX;
 			self::enqueue_scripts();
 			$args = wp_parse_args($args, $JQEX);
+<<<<<<< HEAD
 			$count = self::$count++;
 			ob_start();
 ?><a id="expando_link_<?php echo $count; ?>" href="#" class="expando_link">
@@ -111,6 +140,16 @@ if( !class_exists( "JQEX" ) ):
 	<span id="expando_viewmod_<?php echo $count; ?>" class='view_modifier' data-show="<?php echo esc_attr(stripslashes( $args["show_more"] ))?>" data-hide="<?php echo esc_attr(stripslashes( $args["show_less"] ))?>"><?php echo self::get_view_modifier($args['start'],$args['show_less'],$args['show_more'])?></span>
 </a><div id="expando_text_<?php echo $count; ?>" class="expando_text" data-start="<?php echo esc_attr( $args["start"] )?>">
 	<?php echo $c; ?>
+=======
+			ob_start();
+?><a href="#" class="expando_link">
+	<span class='expando_title'><?php echo stripslashes( $args["expand_text"] )?></span>
+	<span class='view_modifier' data-show="<?php echo esc_attr(stripslashes( $args["show_more"] ))?>" data-hide="<?php echo esc_attr(stripslashes( $args["show_less"] ))?>">
+		<?php echo self::get_view_modifier($args['start'],$args['show_less'],$args['show_more'])?>
+	</span> 
+</a><div class="expando_text <?php echo esc_attr( $args["start"] )?>">
+	<?php echo apply_filters( "the_content",$c ); ?>
+>>>>>>> 9b8e15da06769f4a1173d25252d7d1f658bc5f62
 </div>
 <?php
 			return ob_get_clean();
