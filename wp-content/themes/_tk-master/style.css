@@ -25,12 +25,9 @@ Twitter Bootstrap
 /* Import the necessary TK Bootstrap WP CSS additions */
 @import url( includes/css/bootstrap-wp.css );
 
-<<<<<<< HEAD
 body {
 	font-family: Helvetica,Arial,sans-serif;
 }
-=======
->>>>>>> 9b8e15da06769f4a1173d25252d7d1f658bc5f62
 
 
 /* My Minimal WordPress Styling comes here */
