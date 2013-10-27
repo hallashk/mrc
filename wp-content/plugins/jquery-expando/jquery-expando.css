@@ -1,0 +1,26 @@
+
+div.expando_text {
+	background: #b3d1ff;
+	border: 1px solid #555;
+	border-radius: 10px;
+	padding: 0.5em 1em;
+	margin:  0.5em 1em;
+}
+
+a.expando_link {
+	display:block;
+	font-size:14px;
+	height:20px;
+	line-height:20px;
+}
+
+a.expando_link>span.view_modifier {
+	background: url(plus.gif) no-repeat 5px 4px;
+	padding-left: 20px;
+	width: 20px;
+	height: 20px;
+}
+
+a.expando_link>span.view_modifier[data-visible=true] {
+	background: url(minus.gif) no-repeat 5px 4px;
+}
